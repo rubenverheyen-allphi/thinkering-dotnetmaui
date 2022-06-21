@@ -1,4 +1,1 @@
-# thinkering-dotnetmaui
-
-- test
-- Test Externe Commit
+# Thinkering with .NET MAUI
