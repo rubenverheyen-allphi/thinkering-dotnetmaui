@@ -11,4 +11,13 @@
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
 
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="Red"/>
+                <Setter Property="Shell.ForegroundColor" Value="White"/>
+            </Style>
+        </ResourceDictionary>
+    </Shell.Resources>
+
 </Shell>

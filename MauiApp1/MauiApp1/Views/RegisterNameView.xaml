@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.Views.RegisterNameView"
+             xmlns:viewmodel="clr-namespace:MauiApp1.ViewModels"
+             xmlns:model="clr-namespace:MauiApp1.Models"
+             x:DataType="viewmodel:RegisterNameViewModel"
+             Title="RegisterNameView">
+    <VerticalStackLayout>
+        <HorizontalStackLayout>
+        <Label 
+            Text="Voornaam"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" 
+            Margin="10"/>
+        <Entry WidthRequest="200" BackgroundColor="White" TextColor="Black" Text="{Binding NieuwePersoon.Voornaam}"></Entry>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout>
+            <Label 
+            Text="Familienaam"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" 
+                Margin="10"/>
+            <Entry WidthRequest="200" BackgroundColor="White" TextColor="Black" Text="{Binding NieuwePersoon.Familienaam}"></Entry>
+        </HorizontalStackLayout>
+
+        <Button Text="Toevoegen" Command="{Binding ToevoegenCommand}"/>
+
+        <CollectionView ItemsSource="{Binding Personen}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="model:Persoon">
+                    <HorizontalStackLayout>
+                        <Label Text="{Binding Voornaam}" Margin="3"/>
+                        <Label Text="{Binding Familienaam}" Margin="3"/>
+                    </HorizontalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        
+    </VerticalStackLayout>
+</ContentPage>
